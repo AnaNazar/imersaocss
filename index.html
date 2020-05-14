@@ -5,39 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ana Nazar</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header id="sobre">
     <nav class="menu">
       <ul>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Portfólio</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
     <div>
       <h1 class="site-title">Ana Nazar</h1>
-      <h2 class="site-subtitle">Web Developer</h2>
+      <h2 class="site-subtitle">Front-End Developer</h2>
     </div>
   </header>
-  <section>
-    <h2>Portfólio</h2>
-    <figure>
-      <img class="img-portfolio" src="" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <figure>
-      <img class="img-portfolio" src="" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <figure>
-      <img class="img-portfolio" src="" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <figure>
-      <img class="img-portfolio" src="" alt="">
-      <figcaption></figcaption>
-    </figure>
+  <section id="projetos" class="projetos">
+    <h2>Projetos</h2>
+    <div class="grid">
+      <figure>
+        <a href="https://ananazar.github.io/fend-project-memory-game/" target="_blank">
+          <img class="projeto-image" src="images/projeto-udacity-memory-game.jpg" alt="Desafio Udacity - Jogo da Memória">
+          <figcaption>
+            <h3>Desafio Udacity - Jogo da Memória</h3>
+            <em>Programação da lógica e controle do jogo</em><br>
+            JavaScript / CSS / Responsivo
+          </figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://verao2020.abralin.org/" target="_blank">
+          <img class="projeto-image" src="images/projeto-programacao-site-escola-de-verao-2020-abralin.jpg" alt="Site Escola de Verão da ABRALIN">
+          <figcaption>
+            <h3>Site Escola de Verão 2020</h3>
+            <em>Programação do site</em><br>
+            HTML / CSS / JavaScript / jQuery / Responsivo
+          </figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="http://www.vlf.adv.br/" target="_blank">
+          <img class="projeto-image" src="images/projeto-programacao-site-vlf-advogados.jpg" alt="Site VLF Advogados">
+          <figcaption>
+            <h3>Site VLF Advogados</h3>
+            <em>Programação do site</em><br>
+            HTML / CSS / JavaScript / jQuery / Responsivo
+          </figcaption>
+        </a>
+      </figure>
+    </div>
   </section>
 </body>
 </html>

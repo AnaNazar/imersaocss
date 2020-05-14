@@ -3,13 +3,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
   background-image: linear-gradient(-45deg, #da70d6, #9932cc);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  height: 100vh;
+  color: #ffffff;
+  letter-spacing: 0.025em;
+}
+
+h1, 
+h2 {
+  font-family: 'Bree Serif', serif;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -51,9 +60,7 @@ header {
 
 .site-title,
 .site-subtitle {
-  color: #ffffff;
   text-align: center;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .site-title {
@@ -63,12 +70,60 @@ header {
 .site-subtitle {
   font-style: italic;
   font-weight: 400;
+  text-transform: lowercase;
+}
+
+.projetos {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+.projetos h2 {
+  font-size: 2.4em;
+  line-height: 2.4em;
+  padding: 0 0 1em 0;
+  text-align: center;
+}
+
+.projetos .grid {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  gap: 30px;
+  align-content: center;
+  justify-content: center;
+}
+
+.projetos img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+}
+
+.projetos a {
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.projetos h3 {
+  padding: 0.75em 0 0.5em;
 }
 
 /* BREAKPOINTS */
+@media screen and (min-width: 570px) {
+  .projetos .grid {
+    grid-template-columns: repeat(2, 45%);
+  }
+}
+
 @media screen and (min-width: 768px) {
   body {
     font-size: 16px;
+  }
+
+  .projetos .grid {
+    grid-template-columns: repeat(3, 30%);
   }
 }
 
@@ -76,8 +131,10 @@ header {
   body {
     font-size: 18px;
   }
+}
 
-  header {
-    height: 60vh;
+@media screen and (min-width: 1920px) {
+  .projetos .grid {
+    grid-template-columns: repeat(3, 400px);
   }
 }
