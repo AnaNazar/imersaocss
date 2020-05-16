@@ -22,6 +22,16 @@ h2 {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+p {
+  padding: 0.4em 0;
+}
+
+p a {
+  color: rgba(255,231,0,1);
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(45,1,80,1);
+}
+
 header {
   display: flex;
   align-items: center;
@@ -67,14 +77,41 @@ header {
 
 .site-title {
   font-size: 3em;
+  opacity: 0;
+  transform: scaleY(0);
+  animation: animacaoTitulo 1s ease-out 500ms 1 normal forwards running;
+}
+
+@keyframes animacaoTitulo {
+  50% {
+    transform: scaleX(1.2) scaleY(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
 }
 
 .site-subtitle {
   font-style: italic;
   font-weight: 400;
   text-transform: lowercase;
+  opacity: 0;
+  transform: translateX(-25vw);
+  animation: animacaoSubtitulo 1s ease 750ms 1 normal forwards running;
 }
 
+@keyframes animacaoSubtitulo {
+  50% {
+    transform: translateX(5vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sobre,
 .projetos, 
 .contato {
   min-height: 100vh;
@@ -82,6 +119,7 @@ header {
   text-align: center;
 }
 
+.sobre h2, 
 .projetos h2, 
 .contato h2 {
   font-size: 2.4em;
@@ -90,12 +128,43 @@ header {
   text-align: center;
 }
 
-.projetos .grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(1, 100%);
-  gap: 30px;
   align-content: center;
   justify-content: center;
+  min-height: calc(100vh - 16em);
+  margin: -1.5em 0 1.5em 0;
+}
+
+.sobre .grid {
+  grid-template-columns: 1fr;
+  gap: 2em;
+  align-items: center;
+}
+
+.sobre .avatar {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 260px;
+}
+
+.sobre .avatar img {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.sobre .texto {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+}
+
+.projetos .grid {
+  gap: 30px;
+  grid-template-columns: repeat(1, 100%);
 }
 
 .projetos img {
@@ -106,20 +175,54 @@ header {
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
   object-fit: cover;
-  transition: transform 350ms;
 }
 
-.projetos img:hover {
-  transform: scale(1.05);
+.cartao-flip {
+  perspective: 1000px;
 }
 
-.projetos a {
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.cartao-flip .cartao {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 2s;
+}
+
+.cartao-flip:hover .cartao {
+  transform: rotateY(-180deg);
+}
+
+.cartao-flip .cartao-frente, 
+.cartao-flip .cartao-verso {
+  backface-visibility: hidden;
+}
+
+.cartao-flip .cartao-verso {
+  background: rgb(246,192,255);
+  background: linear-gradient(135deg, rgba(246,192,255,1) 0%, rgba(255,220,220,1) 33%, rgba(255,206,189,1) 67%, rgba(255,247,194,1) 100%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: 98%;
+  color: #740171;
+  text-shadow: unset;
+  padding: 2.4em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-180deg);
+  display: grid;
+  align-items: center;
+}
+
+.cartao-flip .cartao-verso em {
+  font-weight: bold;
 }
 
 .projetos h3 {
+  color: #ffffff;
   padding: 0.75em 0 0.5em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contato {
@@ -127,17 +230,8 @@ header {
 }
 
 .contato .grid {
-  height: calc(100vh - 26em);
-}
-
-.contato .grid {
-  display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 5em);
-  align-content: center;
-  justify-content: center;
-  min-height: calc(100vh - 16em);
-  margin: -1.5em 0 1.5em 0;
 }
 
 .contato a {
@@ -169,6 +263,22 @@ header {
   body {
     font-size: 16px;
   }
+  
+  .sobre .grid {
+    grid-template-columns: 40% 60%;
+  }
+
+  .sobre .avatar {
+    margin-right: unset;
+  }
+
+  .sobre .texto {
+    max-width: 600px;
+  }
+  
+  .sobre p {
+    text-align: left;
+  }
 
   .projetos .grid {
     grid-template-columns: repeat(3, 30%);
@@ -178,6 +288,14 @@ header {
 @media screen and (min-width: 1000px) {
   body {
     font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
   }
 }
 

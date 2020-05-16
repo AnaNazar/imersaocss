@@ -10,9 +10,9 @@
   <script src="https://kit.fontawesome.com/64771f7a96.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header id="sobre">
+  <header>
     <nav class="menu">
-      <ul>
+      <ul class="container">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -23,36 +23,68 @@
       <h2 class="site-subtitle">Front-End Developer</h2>
     </div>
   </header>
+  <section id="sobre" class="sobre container">
+    <h2>Sobre</h2>
+    <div class="grid">
+      <figure class="avatar">
+        <img src="images/ana-nazar-perfil.jpg" alt="Retrato Ana Nazar">
+      </figure>
+      <div class="texto">
+        <p>Olá! Sou Ana, desenvolvedora front-end apaixonada pela área e em continua aprendizagem.</p>
+        <p>Gosto de doguinhos, música, filmes e aprender novos idiomas.</p>
+        <p>No meu dia a dia, faço a programação de sites e de e-mails marketing e, em menor frequência, realizo a criação dos layouts.</p>
+        <p>Este site foi desenvolvido durante a <a href="https://www.alura.com.br/imersao-css" target="_blank">Imersão CSS da Alura ❤️</a>. <em>Gracias!!! Obrigada!!! Vocês são demais!!!</em></p>
+      </div>
+    </div>
+  </section>
   <section id="projetos" class="projetos">
     <h2>Projetos</h2>
     <div class="grid">
       <figure>
         <a href="https://ananazar.github.io/fend-project-memory-game/" target="_blank">
-          <img class="projeto-image" src="images/projeto-udacity-memory-game.jpg" alt="Desafio Udacity - Jogo da Memória">
+          <div class="cartao-flip">
+            <div class="cartao">
+              <img class="projeto-image cartao-frente" src="images/projeto-udacity-memory-game.jpg" alt="Desafio Udacity - Jogo da Memória">
+              <div class="cartao-verso">
+                <p><em>Programação da lógica e controle do jogo</em></p>
+                <p>JavaScript / CSS / Responsivo</p>
+              </div>
+            </div>
+          </div>
           <figcaption>
             <h3>Desafio Udacity - Jogo da Memória</h3>
-            <em>Programação da lógica e controle do jogo</em><br>
-            JavaScript / CSS / Responsivo
           </figcaption>
         </a>
       </figure>
       <figure>
         <a href="https://verao2020.abralin.org/" target="_blank">
-          <img class="projeto-image" src="images/projeto-programacao-site-escola-de-verao-2020-abralin.jpg" alt="Site Escola de Verão da ABRALIN">
+          <div class="cartao-flip">
+            <div class="cartao">
+              <img class="projeto-image cartao-frente" src="images/projeto-programacao-site-escola-de-verao-2020-abralin.jpg" alt="Site Escola de Verão da ABRALIN">
+              <div class="cartao-verso">
+                <p><em>Programação do site</em></p>
+                <p>HTML / CSS / JavaScript / jQuery / Responsivo</p>
+              </div>
+            </div>
+          </div>
           <figcaption>
             <h3>Site Escola de Verão 2020</h3>
-            <em>Programação do site</em><br>
-            HTML / CSS / JavaScript / jQuery / Responsivo
           </figcaption>
         </a>
       </figure>
       <figure>
         <a href="http://www.vlf.adv.br/" target="_blank">
-          <img class="projeto-image" src="images/projeto-programacao-site-vlf-advogados.jpg" alt="Site VLF Advogados">
+          <div class="cartao-flip">
+            <div class="cartao">
+              <img class="projeto-image cartao-frente" src="images/projeto-programacao-site-vlf-advogados.jpg" alt="Site VLF Advogados">
+              <div class="cartao-verso">
+                <p><em>Programação do site</em></p>
+                <p>HTML / CSS / JavaScript / jQuery / Responsivo</p>
+              </div>
+            </div>
+          </div>
           <figcaption>
             <h3>Site VLF Advogados</h3>
-            <em>Programação do site</em><br>
-            HTML / CSS / JavaScript / jQuery / Responsivo
           </figcaption>
         </a>
       </figure>
